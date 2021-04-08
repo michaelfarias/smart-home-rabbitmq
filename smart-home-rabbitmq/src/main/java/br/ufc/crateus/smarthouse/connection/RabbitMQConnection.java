@@ -1,4 +1,4 @@
-package br.ufc.crateus.smarthouse.objects;
+package br.ufc.crateus.smarthouse.connection;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;

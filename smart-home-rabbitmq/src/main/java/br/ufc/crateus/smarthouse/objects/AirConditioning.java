@@ -8,7 +8,8 @@ public class AirConditioning implements ObjectsInterface {
 
 		if (action.equals("ative")) {
 			System.out.println("turning on air conditioning");
-		} else {
+		}
+		if (action.equals("desative")) {
 			System.out.println("turning off air conditioning");
 		}
 

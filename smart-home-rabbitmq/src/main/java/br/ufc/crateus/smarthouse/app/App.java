@@ -3,10 +3,10 @@ package br.ufc.crateus.smarthouse.app;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
+import br.ufc.crateus.smarthouse.connection.RabbitMQConnection;
 import br.ufc.crateus.smarthouse.objects.AirConditioning;
 import br.ufc.crateus.smarthouse.objects.DigitalLock;
 import br.ufc.crateus.smarthouse.objects.LightBulb;
-import br.ufc.crateus.smarthouse.objects.RabbitMQConnection;
 import br.ufc.crateus.smarthouse.objects.VacuumCleaner;
 import br.ufc.crateus.smarthouse.sensors.LightSensor;
 import br.ufc.crateus.smarthouse.sensors.LocationSensor;
@@ -24,8 +24,8 @@ public class App {
 		RabbitMQConnection rmqc = new RabbitMQConnection();
 
 		rmqc.consume(new AirConditioning(), AIR_CONDITIONING);
-//		rmqc.toProduce(TemperatureSensor.verifyTemperature(20f, 39f), AIR_CONDITIONING);
-		rmqc.toProduce(TemperatureSensor.verifyTemperature(20f, 19f), AIR_CONDITIONING);
+		rmqc.toProduce(TemperatureSensor.verifyTemperature(20f, 39f), AIR_CONDITIONING);
+//		rmqc.toProduce(TemperatureSensor.verifyTemperature(20f, 19f), AIR_CONDITIONING);
 
 		rmqc.consume(new DigitalLock(), DIGITAL_LOCK);
 		rmqc.toProduce(LocationSensor.userArrived(), DIGITAL_LOCK);
